@@ -29,15 +29,15 @@ Use Node.js and Express to design and build an API that performs CRUD operations
 
 * **Fork** and **Clone** this repository. X
 * **CD into the folder** where you cloned the repository. X
-* Code!
+* Code! X
 
 ### Implement Requirements
 
 * Take the steps necessary to create a `package.json` to keep a record of all dependencies. X
 * use _yarn_ or _npm_ to add **knex** and **sqlite3** as dependencies to the project. **This is required for database access**. X
 * Configure an _npm script_ named _"start"_ that will execute your code using _nodemon_ so that the **server restarts on changes**. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production. X
-* Design and build a set of endpoints that satisfy the API requirements.
-* **Use  postman_ to test the API as you work through the exercises.**
+* Design and build a set of endpoints that satisfy the API requirements. X
+* **Use  postman_ to test the API as you work through the exercises.** X
 
 ### Database Persistence Helpers
 
@@ -58,18 +58,18 @@ The _schemas_ (properties and data type of each property) used to store and retr
 
 ##### Projects
 
-* `id`: number, no need to provide it when creating projects, the database will generate it.
-* `name`: string, up to 128 characters long, required.
-* `description`: string, up to 128 characters long, required.
-* `completed`: boolean to indicate if the project has been completed, not required
+* `id`: number, no need to provide it when creating projects, the database will generate it. X
+* `name`: string, up to 128 characters long, required. X
+* `description`: string, up to 128 characters long, required. X
+* `completed`: boolean to indicate if the project has been completed, not required X
 
 ##### Actions
 
-* `id`: number, no need to provide it when creating actions, the database will automatically generate it.
-* `project_id`: number, required, must be the id of an existing project.
-* `description`: string, up to 128 characters long, required.
-* `notes`: string, no size limit, not required. Used to record additional notes ore requirements to complete the action.
-* `completed`: boolean to indicate if the action has been completed, not required
+* `id`: number, no need to provide it when creating actions, the database will automatically generate it. X
+* `project_id`: number, required, must be the id of an existing project. X
+* `description`: string, up to 128 characters long, required. X
+* `notes`: string, no size limit, not required. Used to record additional notes ore requirements to complete the action. X
+* `completed`: boolean to indicate if the action has been completed, not required X
 
 We have provided test data for all the resources.
 
@@ -79,12 +79,12 @@ Now that we have a way to add, update, remove and retrieve data from the provide
 
 Design and build the necessary endpoints to:
 
-* perform CRUD operations on _projects_ and _actions_.
-* retrieve the list of actions for a project.
+* perform CRUD operations on _projects_ and _actions_. X
+* retrieve the list of actions for a project. X
 
 ## Stretch Goal
 
-* Use `create-react-app` to create an application in a separate folder (outside the API project folder). Name it anything you want.
-* From the React application show a list of all _projects_ using the API you built.
+* Use `create-react-app` to create an application in a separate folder (outside the API project folder). Name it anything you want. X
+* From the React application show a list of all _projects_ using the API you built. X
 * Add functionality to show the details of a project, including its actions, when clicking a project name in the list. Use React Router to navigate to a separate route to show the project details.
-* Add styling! Perhaps with `styled-components`.
+* Add styling! Perhaps with `styled-components`. X
