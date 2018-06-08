@@ -14,7 +14,7 @@ method      | *endpoint*               | what it is         |route handler  |cli
 |delete:    | `/api/actions/:id`          | delete a action       |   X   |      X     |  X   |
 |put:       | `/api/projects/:id`         |  A project            |   X   |      X     |  X   |
 |put:       | `/api/actions/:id`          | An action             |   X   |      X     |  X   |
-
+|get:       | `api/projects/:id/actions`  | A project's actions   |   X   |      X     |  X   |
 
 
 
