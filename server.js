@@ -190,6 +190,26 @@ server.put('/api/actions/:id', (req, res) =>{
         });
 })
 
+server.get('/api/projects/:id/actions', (req, res) =>{
+    const { id } = req.params;
+    const { project_id, description, notes, completed  } = req.body;
+   
+    projectModel
+        .getProjectActions(id)
+            .then(result =>{
+                if (result.length > 0){
+                    res.json(result);
+                }
+                else{
+                    sendUserError(404, "Project Action is not found", res);
+                }
+            })
+            .catch(err =>{
+                sendUserError(500, `There was an error in retrieving #${id}'s actions.`, res)
+            });
+});
+
+
 server.listen(port, () =>{
     console.log(`Server is listening on port ${port}`);
 });
