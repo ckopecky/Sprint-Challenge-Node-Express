@@ -107,6 +107,88 @@ server.post('/api/actions', (req, res) =>{
         });
 });
 
+server.delete('/api/projects/:id', (req, res) =>{
+    const { id } = req.params;
+    projectModel
+        .remove(id)
+        .then(response =>{
+            if(!response){
+                sendUserError(400, "This project could not be removed, possibly due to it being open in another program or folder")
+            }
+            res.status(204).json({Success: "This Project has been successfully removed"})
+        })
+        .catch(err =>{
+            sendUserError(500, "There was an error in removing this project", res);
+        });
+});
+
+server.delete('/api/actions/:id', (req, res) =>{
+    const { id } = req.params;
+    actionModel
+        .remove(id)
+        .then(result =>{
+            if(!result){
+                sendUserError(400, "This action could not be removed, possibly due to it being open elsewhere");
+            }
+        })
+        .catch(err =>{
+            sendUserError(500, "There was an error in removing this action", res);
+        });
+});
+
+server.put('/api/projects/:id', (req, res) =>{
+    const { id } = req.params;
+    const { name, description } = req.body;
+
+    projectModel
+        .get(id)
+        .then(project =>{
+            if(!project){
+                sendUserError(404, "The specified Project could not be found", res);
+            }
+            else{
+                if(!name || !description){
+                    sendUserError(400, "Name and Description are required", res);
+                }
+                projectModel
+                    .update(id, { name, description })
+                    ,then(updated =>{
+                        res.status(200).json(updated)
+                    })
+                    .catch(err =>{
+                        sendUserError(500, "There was an error in updating information", res);
+                    })
+
+            }
+        });
+})
+
+server.put('/api/actions/:id', (req, res) =>{
+    const { id } = req.params;
+    const { project_id, description, notes, completed } = req.body;
+
+    projectModel
+        .get(id)
+        .then(action =>{
+            if(!action){
+                sendUserError(404, "The specified Project could not be found", res);
+            }
+            else{
+                if(!project_id || !description){
+                    sendUserError(400, "Name and Description are required", res);
+                }
+                projectModel
+                    .update(id, { project_id, description, notes, completed})
+                    ,then(updatedAction =>{
+                        res.status(200).json(updatedAction)
+                    })
+                    .catch(err =>{
+                        sendUserError(500, "There was an error in updating information", res);
+                    })
+
+            }
+        });
+})
 
 server.listen(port, () =>{
     console.log(`Server is listening on port ${port}`);

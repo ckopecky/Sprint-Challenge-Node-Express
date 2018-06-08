@@ -2,32 +2,18 @@
 
 ##endpoints
 
-##### Projects
-
-* `name`: string, up to 128 characters long, required.
-* `description`: string, up to 128 characters long, required.
-* `completed`: boolean to indicate if the project has been completed, not required
-
-##### Actions
-
-* `project_id`: number, required, must be the id of an existing project.
-* `description`: string, up to 128 characters long, required.
-* `notes`: string, no size limit, not required. Used to record additional notes ore requirements to complete the action.
-* `completed`: boolean to indicate if the action has been completed, not required
-
-
 method      | *endpoint*               | what it is         |route handler  |client err |server err|
 ----        | ----                     | :----:             | ----:| ----      | ----|
 |get:       | `/api/projects `            |   list of projects    |   X   |      X     |  X   |
 |get:       | `/api/projects/:id`         |  A project            |   X   |      X     |  X   |
-|post:      | `/api/projects`             | add project           |   X    |     X     |  X   |
-|delete:    | `/api/projects/:id`         | delete a project      |      |           |     |
-|get:       | `/api/actions`              |  list of actions      |  X    |      X     |  X   |
-|get:       | `/api/actions/:id`          | An action             |  X    |      X     |  X   |
-|post:      | `/api/actions`              | add action            |  X    |      X     |  X   |
-|delete:    | `/api/actions/:id`          | delete a action       |      |           |     |
-|put:       | `/api/projects/:id`         |  A project            |      |           |     |
-|put:       | `/api/actions/:id`          | An action             |      |           |     |
+|post:      | `/api/projects`             | add project           |   X   |      X     |  X   |
+|delete:    | `/api/projects/:id`         | delete a project      |   X   |      X     |  X   |
+|get:       | `/api/actions`              |  list of actions      |   X   |      X     |  X   |
+|get:       | `/api/actions/:id`          | An action             |   X   |      X     |  X   |
+|post:      | `/api/actions`              | add action            |   X   |      X     |  X   |
+|delete:    | `/api/actions/:id`          | delete a action       |   X   |      X     |  X   |
+|put:       | `/api/projects/:id`         |  A project            |   X   |      X     |  X   |
+|put:       | `/api/actions/:id`          | An action             |   X   |      X     |  X   |
 
 
 
