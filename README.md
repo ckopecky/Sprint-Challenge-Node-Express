@@ -1,4 +1,4 @@
-# E press and Node.js Sprint Challenge
+# Express and Node.js Sprint Challenge
 
 ##endpoints
 
