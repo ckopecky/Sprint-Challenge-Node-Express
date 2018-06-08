@@ -1,17 +1,13 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  margin: 0 auto;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color:rgb(104, 47, 104);
+  height: 50px;
   padding: 20px;
-  color: white;
+  color: rgb(218, 175, 238);
 }
 
 .App-title {
@@ -21,8 +17,22 @@
 .App-intro {
   font-size: large;
 }
+.list{
+  display:flex;
+  flex-direction:column;
+  width: 400px;
+  padding:40px;
+  margin: 0 auto;
+  list-style-type: none;
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+}
+.card{
+  margin: 20px;
+  background-color:beige;
+  height:200px;
+  padding: 20px;
+  border: 5px double saddlebrown;
+}
+.description{
+  font-size:15px;
 }
