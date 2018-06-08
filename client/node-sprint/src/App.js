@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(props){
@@ -33,7 +34,7 @@ class App extends Component {
           {this.state.projects.map(project =>{
             return(
               <li className="card" key={project.id}>
-                <h3>{project.name}</h3>
+                <Link to={`/projects/${project.id}/actions`}><h3>{project.name}</h3></Link>
                 <p className="description">Description:{project.description}</p>
               </li>
             )
